@@ -13,8 +13,7 @@ RUN apk add --no-cache ${DEV_PKGS} &&\
   mkdir -p /tmp/aom/aom_build &&\
   cd /tmp/aom/aom_build &&\
   cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_SHARED_LIBS=1 -DENABLE_TESTS=0 /tmp/aom &&\
-  make &&\
-  make install &&\
+  make -j$(nproc) install &&\
   rm -rf /tmp/aom &&\
   apk del ${DEV_PKGS} &&\
   cp -r ${PREFIX} /output/
