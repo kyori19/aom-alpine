@@ -1,0 +1,8 @@
+services:
+  aom:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: 
+        version: 2.0.2
+    image: kyori/aom-alpine
