@@ -16,4 +16,4 @@ RUN apk add --no-cache ${DEV_PKGS} &&\
   make -j$(nproc) install &&\
   rm -rf /tmp/aom &&\
   apk del ${DEV_PKGS} &&\
-  cp -r ${PREFIX} /output/
+  mv ${PREFIX} /output
